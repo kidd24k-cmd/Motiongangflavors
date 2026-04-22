@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Motion Gang Flavors</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:Arial,sans-serif;
+background:#000;
+color:#fff;
+text-align:center;
+}
+header{
+padding:20px;
+background:#111;
+font-size:32px;
+font-weight:bold;
+color:#39ff14;
+letter-spacing:2px;
+}
+.hero{
+padding:70px 20px;
+background:linear-gradient(135deg,#000,#1a001a,#111);
+}
+.hero h1{
+font-size:52px;
+margin-bottom:15px;
+}
+.hero span{
+color:#ff1a1a;
+}
+.hero p{
+font-size:20px;
+color:#ccc;
+margin-bottom:25px;
+}
+.btn{
+display:inline-block;
+padding:15px 30px;
+background:#ff1a1a;
+color:#fff;
+text-decoration:none;
+font-weight:bold;
+border-radius:8px;
+}
+.timer{
+padding:30px;
+font-size:28px;
+color:#39ff14;
+font-weight:bold;
+}
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+padding:30px;
+}
+.card{
+background:#111;
+padding:20px;
+border-radius:12px;
+border:1px solid #222;
+}
+.card h3{
+margin-bottom:10px;
+}
+.price{
+color:#ff1a1a;
+font-size:24px;
+margin-bottom:12px;
+font-weight:bold;
+}
+footer{
+padding:25px;
+color:#777;
+border-top:1px solid #222;
+margin-top:30px;
+}
+</style>
+</head>
+<body>
+
+<header>MOTION GANG FLAVORS</header>
+
+<section class="hero">
+<h1>MOTION <span>GANG</span> FLAVORS</h1>
+<p>Bold Flavor. Premium Smoke. Limited Drop.</p>
+<a href="#" class="btn">PRE ORDER NOW</a>
+</section>
+
+<section class="timer" id="countdown">
+Drop Date: July 11th
+</section>
+
+<section class="products">
+
+<div class="card">
+<h3>Cherry Punch Candy</h3>
+<div class="price">$50</div>
+<a href="#" class="btn">Buy Now</a>
+</div>
+
+<div class="card">
+<h3>Cookies N Cream</h3>
+<div class="price">$50</div>
+<a href="#" class="btn">Buy Now</a>
+</div>
+
+<div class="card">
+<h3>Blue Razz Blast</h3>
+<div class="price">$50</div>
+<a href="#" class="btn">Buy Now</a>
+</div>
+
+<div class="card">
+<h3>5G Disposable</h3>
+<div class="price">$35</div>
+<a href="#" class="btn">Buy Now</a>
+</div>
+
+</section>
+
+<footer>
+© 2026 Motion Gang Flavors
+</footer>
+
+<script>
+const countDate = new Date("July 11, 2026 00:00:00").getTime();
+
+setInterval(function(){
+const now = new Date().getTime();
+const gap = countDate - now;
+
+const d = Math.floor(gap / (1000 * 60 * 60 * 24));
+const h = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+const m = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
+const s = Math.floor((gap % (1000 * 60)) / 1000);
+
+document.getElementById("countdown").innerHTML =
+d + " Days " + h + " Hours " + m + " Minutes " + s + " Seconds";
+},1000);
+</script>
+
+</body>
+</html>
